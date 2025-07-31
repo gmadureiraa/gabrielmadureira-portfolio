@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { motion } from "framer-motion";
 import { fetchPosts } from "@/lib/fetchers";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
-export default function ProjectsPage() {
+function ProjectsContent() {
   const [posts, setPosts] = useState<any[]>([]);
   const [filteredItems, setFilteredItems] = useState<any[]>([]);
   const [selectedAreas, setSelectedAreas] = useState<string[]>([]);
@@ -301,4 +301,25 @@ export default function ProjectsPage() {
       </div>
     </div>
   );
-} 
+}
+
+export default function ProjectsPage() {
+  return (
+    <Suspense fallback={
+      <div className="w-full flex items-center justify-center max-w-7xl mx-auto">
+        <div className="flex flex-col items-center overflow-hidden w-full">
+          <div className="w-full py-2 px-2 lg:py-10 lg:px-4">
+            <div className="text-center py-16">
+              <div className="animate-pulse">
+                <div className="h-8 bg-neutral-800 rounded mb-4"></div>
+                <div className="h-4 bg-neutral-800 rounded w-2/3 mx-auto"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }>
+      <ProjectsContent />
+    </Suspense>
+  );
+}
