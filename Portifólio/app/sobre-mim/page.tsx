@@ -253,7 +253,7 @@ export default function SobreMim() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Details */}
           <div className="bg-background rounded-xl shadow-lg p-6 border border-neutral-800">
-            <h2 className="text-2xl font-bold mb-6 text-neutral-100">Let's get to work!</h2>
+            <h2 className="text-2xl font-bold mb-6 text-neutral-100">Let&apos;s get to work!</h2>
             
             {/* Contact Details */}
             <div className="mb-6">
@@ -333,7 +333,7 @@ export default function SobreMim() {
             </div>
             
             <div className="mb-4">
-              <h3 className="text-lg font-semibold mb-2 text-neutral-200">O que é "Now"?</h3>
+              <h3 className="text-lg font-semibold mb-2 text-neutral-200">O que é &ldquo;Now&rdquo;?</h3>
                               <p className="text-neutral-300 font-semibold mb-2">
                   Transformando Investimentos Imobiliários com Solana
                 </p>

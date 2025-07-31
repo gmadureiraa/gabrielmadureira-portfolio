@@ -92,7 +92,7 @@ export default function PensamentosCriptoPage() {
             </p>
             
             <blockquote className="border-l-4 border-blue-500 pl-4 italic text-neutral-300 mb-6">
-              "O futuro das criptomoedas não está apenas na tecnologia, mas na forma como ela é apresentada e adotada pelo público em geral."
+              &ldquo;O futuro das criptomoedas não está apenas na tecnologia, mas na forma como ela é apresentada e adotada pelo público em geral.&rdquo;
             </blockquote>
             
             <p className="text-neutral-300 leading-relaxed">
