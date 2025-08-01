@@ -7,8 +7,21 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "G Madureira",
-  description: "built using next.js, magic-ui, and tailwindcss",
+  title: "Gabriel Madureira - Portfolio",
+  description: "Portfolio pessoal de Gabriel Madureira - Desenvolvedor Full-Stack e especialista em marketing digital",
+  icons: {
+    icon: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      },
+      {
+        url: '/favicon.ico',
+        type: 'image/x-icon',
+      }
+    ],
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
