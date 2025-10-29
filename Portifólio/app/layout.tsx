@@ -13,15 +13,21 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: '/favicon.ico',
+        sizes: 'any',
+      },
+      {
         url: '/favicon.svg',
         type: 'image/svg+xml',
       },
-      {
-        url: '/favicon.ico',
-        type: 'image/x-icon',
-      }
     ],
-    apple: '/favicon.svg',
+    apple: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    shortcut: '/favicon.ico',
   },
 };
 
