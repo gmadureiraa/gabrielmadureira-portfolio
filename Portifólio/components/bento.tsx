@@ -326,7 +326,7 @@ const features = [
               </div>
               <div className="flex justify-center gap-4">
                 <a
-                  href="https://instagram.com/ogabrielmadureira"
+                  href="https://instagram.com/madureira0x"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-neutral-400 hover:text-neutral-200 transition-colors duration-200"
@@ -336,7 +336,7 @@ const features = [
                   </svg>
                 </a>
                 <a
-                  href="https://twitter.com/madureira_eth"
+                  href="https://x.com/madureira0x"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-neutral-400 hover:text-neutral-200 transition-colors duration-200"
