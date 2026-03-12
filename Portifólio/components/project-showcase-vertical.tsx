@@ -6,6 +6,7 @@ interface Project {
   body: string;
   slug: string;
   image: string;
+  type?: string;
 }
 
 interface ProjectShowcaseVerticalProps {
@@ -17,12 +18,15 @@ const ReviewCard = ({
   body,
   slug,
   image,
+  type,
 }: {
   name: string;
   body: string;
   slug: string;
   image: string;
+  type?: string;
 }) => {
+  const href = type === "Artigo" ? `/posts/${slug}` : `/projects/${slug}`;
   return (
     <figure
       className={cn(
@@ -33,7 +37,7 @@ const ReviewCard = ({
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
-      <a href={slug.startsWith('posts/') ? `/${slug}` : `/projects/${slug}`}>
+      <a href={href}>
         <div className="flex flex-row items-center gap-2">
           <div className="flex flex-col">
             <div className="flex items-start gap-2">
