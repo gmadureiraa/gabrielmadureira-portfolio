@@ -164,8 +164,8 @@ const projects: ContentItem[] = [
 ];
 
 const TYPE_COLORS: Record<ItemType, string> = {
-  Projeto: "bg-blue-500/10 text-blue-400 border-blue-500/20",
-  Artigo: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+  Projeto: "bg-green-500/10 text-green-400 border-green-500/20",
+  Artigo: "bg-pink-500/10 text-pink-400 border-pink-500/20",
 };
 
 function GridIcon() {
@@ -274,48 +274,34 @@ function ProjectsContent() {
     <a
       href={getItemHref(item)}
       className={cn(
-        "group flex items-start gap-4 px-4 py-4 rounded-xl border transition-all duration-200",
-        "border-neutral-800 hover:border-neutral-700 hover:bg-neutral-900/40 bg-background"
+        "group flex items-center gap-3 px-4 py-3 rounded-lg border transition-all duration-200",
+        "border-neutral-800/60 hover:border-neutral-700 hover:bg-neutral-900/30 bg-transparent"
       )}
     >
-      {/* Type indicator bar */}
       <div className={cn(
-        "shrink-0 w-1 self-stretch rounded-full mt-0.5",
-        item.type === "Artigo" ? "bg-amber-500/40" : "bg-blue-500/40"
+        "shrink-0 w-0.5 self-stretch rounded-full",
+        item.type === "Artigo" ? "bg-pink-500/50" : "bg-green-500/50"
       )} />
 
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 mb-1 flex-wrap">
-          <span className={cn("text-xs px-2 py-0.5 rounded-full font-semibold border", TYPE_COLORS[item.type])}>
-            {item.type}
-          </span>
-          <span className="text-xs text-neutral-600">{getFirstArea(item)}</span>
-          {Array.isArray(item.area) && item.area.length > 1 && (
-            <span className="text-xs text-neutral-700">+{item.area.length - 1}</span>
-          )}
-        </div>
-        <h3 className="text-base font-semibold text-neutral-200 group-hover:text-neutral-100 transition-colors leading-snug mb-1 truncate">
-          {item.title}
-        </h3>
-        <p className="text-sm text-neutral-500 line-clamp-1">{item.description}</p>
-      </div>
+      <h3 className="flex-1 text-sm font-medium text-neutral-300 group-hover:text-neutral-100 transition-colors truncate">
+        {item.title}
+      </h3>
 
-      <div className="shrink-0 flex flex-col items-end gap-2 pt-0.5">
-        <span className="text-xs text-neutral-600">
+      <div className="flex items-center gap-2 shrink-0">
+        <span className={cn("text-xs px-2 py-0.5 rounded-full font-medium border", TYPE_COLORS[item.type])}>
+          {item.type}
+        </span>
+        <span className="text-xs text-neutral-600 hidden sm:block">
+          {getFirstArea(item)}
+        </span>
+        <span className="text-xs text-neutral-600 w-20 text-right">
           {item.date
-            ? new Date(item.date).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" })
+            ? new Date(item.date).toLocaleDateString("pt-BR", { day: "2-digit", month: "short" })
             : item.status}
         </span>
-        <div className="flex flex-wrap gap-1 justify-end hidden sm:flex">
-          {item.technologies.slice(0, 2).map((tech) => (
-            <span key={tech} className="text-xs bg-neutral-800/50 text-neutral-500 px-2 py-0.5 rounded border border-neutral-800">
-              {tech}
-            </span>
-          ))}
-        </div>
       </div>
 
-      <svg className="shrink-0 w-4 h-4 text-neutral-700 group-hover:text-neutral-400 transition-colors mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="shrink-0 w-3.5 h-3.5 text-neutral-700 group-hover:text-neutral-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
       </svg>
     </a>
@@ -341,9 +327,9 @@ function ProjectsContent() {
 
           {/* Header */}
           <FadeIn direction="down" className="text-center mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-100 mb-4">Projetos & Artigos</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-neutral-100 mb-4">Building.</h1>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-              O que construí, o que aprendi e o que penso sobre marketing, IA e negócios.
+              O que estou construindo, o que aprendi e o que penso.
             </p>
           </FadeIn>
 
