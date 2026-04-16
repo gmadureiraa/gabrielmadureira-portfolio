@@ -1,9 +1,11 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import { FadeIn } from "@/components/magicui/fade-in";
 import BlurIn from "@/components/magicui/blur-in";
 const Globe = dynamic(() => import("@/components/magicui/globe"), { ssr: false });
 
-export default async function DeploymentsPage() {
+export default function DeploymentsPage() {
   return (
     <div className="mt-10 w-full max-w-2xl mx-auto px-6">
       <BlurIn duration={0.5}>
