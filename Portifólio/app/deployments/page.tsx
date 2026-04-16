@@ -1,6 +1,7 @@
+import dynamic from "next/dynamic";
 import { FadeIn } from "@/components/magicui/fade-in";
 import BlurIn from "@/components/magicui/blur-in";
-import Globe from "@/components/magicui/globe";
+const Globe = dynamic(() => import("@/components/magicui/globe"), { ssr: false });
 
 export default async function DeploymentsPage() {
   return (

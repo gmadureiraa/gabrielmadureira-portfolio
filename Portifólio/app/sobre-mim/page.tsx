@@ -1,5 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sobre — Gabriel Madureira | Fundador da Kaleidos",
+  description:
+    "Fundador da Kaleidos, agência de marketing digital para cripto e fintech. 15+ produtos digitais.",
+};
 
 function SkillBar({ skill, level }: { skill: string; level: number }) {
   return (
@@ -20,37 +27,37 @@ function SkillBar({ skill, level }: { skill: string; level: number }) {
 
 export default function SobreMim() {
   const skills = [
-    { skill: "Copywriting", level: 95 },
-    { skill: "SEO", level: 90 },
-    { skill: "React", level: 85 },
-    { skill: "Cripto Marketing", level: 92 },
-    { skill: "Design", level: 80 },
-    { skill: "Automação", level: 75 },
+    { skill: "Estratégia Cripto/Web3", level: 95 },
+    { skill: "Copywriting & Conteúdo", level: 95 },
+    { skill: "Desenvolvimento (React/Next.js)", level: 90 },
+    { skill: "SEO & Growth", level: 88 },
+    { skill: "Automação & IA", level: 85 },
+    { skill: "Design & UI/UX", level: 80 },
   ];
 
   const experiences = [
     {
       company: "Kaleidos Digital",
-      role: "Cofundador",
+      role: "Fundador",
       period: "Set 2023 - Presente",
-      duration: "1 ano 11 meses",
-      description: "Cofundador da agência digital especializada em marketing para criptomoedas e fintech.",
+      duration: "2+ anos",
+      description: "Agência de marketing digital para cripto e fintech. Time distribuído com automações de IA no centro da operação.",
       type: "Tempo integral"
     },
     {
       company: "Jornal Cripto",
-      role: "Fundador e CEO",
+      role: "Fundador",
       period: "Out 2022 - Presente",
-      duration: "2 anos 10 meses",
-      description: "Fundador e CEO do Jornal Cripto, plataforma de notícias e análise do mercado cripto.",
+      duration: "3+ anos",
+      description: "Portal de análise cripto com 10k visitas/mês. Newsletter 2x/semana e webapp com insights em tempo real.",
       type: "Remota"
     },
     {
       company: "Mercado Bitcoin",
-      role: "Redator e Copywriter",
+      role: "Copywriter",
       period: "Jul 2023 - Jan 2025",
       duration: "1 ano 7 meses",
-      description: "Redator e copywriter especializado em conteúdo para o maior exchange de criptomoedas do Brasil.",
+      description: "Copy e conteúdo estratégico para o maior exchange de criptomoedas do Brasil.",
       type: "Tempo integral"
     },
     {
@@ -58,81 +65,25 @@ export default function SobreMim() {
       role: "Copywriter Social Media",
       period: "2023 - 2024",
       duration: "1 ano",
-      description: "Copywriter para redes sociais da Crypto.com, criando conteúdo estratégico para o mercado brasileiro.",
+      description: "Conteúdo para redes sociais da Crypto.com no mercado brasileiro. Estratégia, copy e calendário editorial.",
       type: "Freelance"
     },
     {
-      company: "Defiverso e Investidor 4.20",
-      role: "Copywriter Estratégista",
+      company: "Defiverso / Investidor 4.20",
+      role: "Copywriter Estratégico",
       period: "2023 - 2024",
       duration: "1 ano",
-      description: "Copywriter estratégico para Lucas Amendola, criando conteúdo persuasivo para o mercado de investimentos.",
+      description: "Estratégia de conteúdo e copy para Lucas Amendola no mercado de investimentos e DeFi.",
       type: "Freelance"
-    },
-    {
-      company: "Orlando On Crypto",
-      role: "Copywriter",
-      period: "Ago 2023 - Set 2024",
-      duration: "1 ano 2 meses",
-      description: "Copywriter especializado em conteúdo cripto para Orlando On Crypto.",
-      type: "Freelance"
-    },
-    {
-      company: "Trevo Digital",
-      role: "Líder de Projetos",
-      period: "Mai 2023 - Jul 2023",
-      duration: "3 meses",
-      description: "Liderança de projetos digitais e estratégias de marketing para clientes diversos.",
-      type: "Tempo integral"
     },
     {
       company: "CriptoFacil",
       role: "Redator",
       period: "Out 2022 - Jul 2023",
       duration: "10 meses",
-      description: "Redator freelancer especializado em estratégia digital e conteúdo sobre criptomoedas.",
+      description: "Onde comecei a escrever sobre cripto. Artigos, análises e conteúdo educacional.",
       type: "Freelance"
     },
-    {
-      company: "Grupo CriptoNinja",
-      role: "Copywriter",
-      period: "Ago 2022 - Jul 2023",
-      duration: "1 ano",
-      description: "Copywriter para o Grupo CriptoNinja, criando conteúdo estratégico para o mercado cripto.",
-      type: "Meio período"
-    },
-    {
-      company: "CopyFinance",
-      role: "CEO",
-      period: "Ago 2022 - Jul 2023",
-      duration: "1 ano",
-      description: "CEO da CopyFinance, empresa especializada em copywriting para o mercado financeiro.",
-      type: "Tempo integral"
-    },
-    {
-      company: "Unifesp - Universidade Federal de São Paulo",
-      role: "Estudante de Graduação",
-      period: "Mar 2019 - Jul 2023",
-      duration: "4 anos 5 meses",
-      description: "Graduação em São José dos Campos, São Paulo.",
-      type: "Tempo integral"
-    },
-    {
-      company: "Loja Green Habit",
-      role: "Criador e Diretor",
-      period: "Jan 2020 - Dez 2021",
-      duration: "2 anos",
-      description: "Criador e gerente da Loja Green Habit, responsável pelo desenvolvimento do site e gerenciamento de estoque.",
-      type: "Meio período"
-    },
-    {
-      company: "Enactus Unifesp São José dos Campos",
-      role: "Diretor de Marketing",
-      period: "Jan 2020 - Jan 2021",
-      duration: "1 ano 1 mês",
-      description: "Diretor de marketing responsável por criação de conteúdo criativo e liderança de equipe.",
-      type: "Meio período"
-    }
   ];
 
   return (
@@ -142,14 +93,13 @@ export default function SobreMim() {
         <div className="bg-background rounded-xl shadow-lg p-8 border border-neutral-800">
           <div className="flex flex-col md:flex-row gap-8">
             <div className="flex-1">
-              <h6 className="text-sm font-light text-neutral-100/50 mb-2">bem-vindo</h6>
+              <h6 className="text-sm font-light text-neutral-100/50 mb-2">sobre mim</h6>
               <h1 className="text-3xl font-bold text-neutral-100 mb-4">
-                Eu sou o <span className="text-neutral-300">Madureira</span>
+                Gabriel <span className="text-neutral-300">Madureira</span>
               </h1>
-              
+
               <p className="text-base font-light text-neutral-300 leading-relaxed mb-6">
-                Full-Stack Marketer para o mercado Cripto/financeiro. Copywriter e marketing com foco em conteúdo, 
-                desenvolvimento web, design e um pouco mais...
+                Fundador da Kaleidos, agência de marketing digital para cripto e fintech. Construo produtos digitais e estratégias que geram resultado mensurável — 15+ produtos ao vivo.
               </p>
               
               <div className="flex gap-3 mb-6">
@@ -197,7 +147,7 @@ export default function SobreMim() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Skills */}
           <div className="bg-background rounded-xl shadow-lg p-6 border border-neutral-800">
-            <h2 className="text-xl font-bold mb-6 text-neutral-100">Habilidades Técnicas</h2>
+            <h2 className="text-xl font-bold mb-6 text-neutral-100">O que eu faço (de verdade)</h2>
             {skills.map((s) => (
               <SkillBar key={s.skill} skill={s.skill} level={s.level} />
             ))}
@@ -205,20 +155,20 @@ export default function SobreMim() {
 
           {/* Technologies */}
           <div className="bg-background rounded-xl shadow-lg p-6 border border-neutral-800">
-            <h2 className="text-xl font-bold mb-6 text-neutral-100">Tecnologias</h2>
+            <h2 className="text-xl font-bold mb-6 text-neutral-100">Stack</h2>
             <div className="grid grid-cols-2 gap-2 text-xs">
-              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Bitcoin</span>
-              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Ethereum</span>
-              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">React</span>
-              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Next.js</span>
               <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">TypeScript</span>
+              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">React / Next.js</span>
               <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Tailwind CSS</span>
-              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">SEO</span>
+              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Supabase</span>
+              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Python</span>
+              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">n8n / Automações</span>
+              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">SEO & Analytics</span>
               <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Copywriting</span>
-              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Canva</span>
-              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Notion</span>
-              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Analytics</span>
-              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Automação</span>
+              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">DeFi / Web3</span>
+              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">IA (Claude, GPT)</span>
+              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Figma</span>
+              <span className="bg-neutral-800 px-3 py-2 rounded-lg text-center border border-neutral-700">Vercel</span>
             </div>
           </div>
         </div>
@@ -253,7 +203,7 @@ export default function SobreMim() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Details */}
           <div className="bg-background rounded-xl shadow-lg p-6 border border-neutral-800">
-            <h2 className="text-2xl font-bold mb-6 text-neutral-100">Let&apos;s get to work!</h2>
+            <h2 className="text-2xl font-bold mb-6 text-neutral-100">Vamos trabalhar juntos?</h2>
             
             {/* Contact Details */}
             <div className="mb-6">
@@ -287,7 +237,7 @@ export default function SobreMim() {
                 </a>
                 
                 <a 
-                  href="https://github.com/engageintellect"
+                  href="https://github.com/gmadureiraa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 px-3 py-2 rounded-lg transition-colors duration-200 border border-neutral-700"
@@ -325,30 +275,31 @@ export default function SobreMim() {
             </div>
           </div>
 
-          {/* Now Section */}
+          {/* Minha História Section */}
           <div className="bg-background rounded-xl shadow-lg p-6 border border-neutral-800">
             <div className="flex items-center gap-2 mb-4">
-              <h2 className="text-2xl font-bold text-neutral-100">Now</h2>
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-            </div>
-            
-            <div className="mb-4">
-              <h3 className="text-lg font-semibold mb-2 text-neutral-200">O que é &ldquo;Now&rdquo;?</h3>
-                              <p className="text-neutral-300 font-semibold mb-2">
-                  Transformando Investimentos Imobiliários com Solana
-                </p>
-                <p className="text-sm text-neutral-400">
-                  Como a startup Homebase usa tecnologia blockchain para revolucionar oportunidades de investimento imobiliário, tornando o investimento em propriedades acessível a todos através de tokenização e smart contracts.
-                </p>
+              <h2 className="text-2xl font-bold text-neutral-100">Minha história (versão curta)</h2>
             </div>
 
-            <div className="bg-neutral-800 rounded-lg p-4 border border-neutral-700">
-              <h4 className="text-sm font-semibold text-neutral-200 mb-2">Foco Atual:</h4>
+            <div className="space-y-4 text-sm text-neutral-300 leading-relaxed">
+              <p>
+                Comecei escrevendo sobre cripto em 2022 — primeiro no CriptoFacil, depois no Jornal Cripto (10k visitas/mês). Em 2023, marcas como Crypto.com e Mercado Bitcoin começaram a pedir copy. Em vez de ser freelancer para sempre, fundei a Kaleidos.
+              </p>
+              <p>
+                Hoje a Kaleidos atende empresas no mercado cripto e fintech. Mas o que me diferencia não é só o marketing — eu também construo os produtos. São 15+ apps, dashboards e ferramentas que saem do Figma para produção em semanas, não meses.
+              </p>
+              <p>
+                Minha stack: TypeScript, React, Next.js, Supabase, Python. Meu método: entender o negócio, construir rápido, medir tudo, iterar.
+              </p>
+            </div>
+
+            <div className="bg-neutral-800 rounded-lg p-4 border border-neutral-700 mt-4">
+              <h4 className="text-sm font-semibold text-neutral-200 mb-2">O que me diferencia:</h4>
               <ul className="text-sm text-neutral-400 space-y-1">
-                <li>• Integração blockchain para imóveis</li>
-                <li>• Desenvolvimento de smart contracts</li>
-                <li>• Estratégias de tokenização</li>
-                <li>• Protocolos DeFi para investimento imobiliário</li>
+                <li>Entendo cripto por dentro — não sou marketeiro que googla o que é blockchain</li>
+                <li>Programo, escrevo copy E penso em estratégia. Tudo junto</li>
+                <li>15+ projetos com demo ao vivo — não é só slide bonito</li>
+                <li>Construo rápido: do zero ao deploy em semanas</li>
               </ul>
             </div>
           </div>
@@ -361,27 +312,20 @@ export default function SobreMim() {
               Vamos conversar.
             </h2>
             <p className="text-neutral-400 mb-6 max-w-md mx-auto">
-              Deixe seu email para começarmos uma conversa. Vou entrar em contato em breve.
-            </p>
-            <p className="text-sm text-neutral-500 mb-8">
-              *Seu email nunca será compartilhado com ninguém.
+              Precisa de alguém que entende cripto, programa e pensa em marketing? Vamos conversar.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <a 
-                href="mailto:contato@gabrielmadureira.com"
-                className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 text-center py-3 px-4 rounded-lg transition-colors duration-200 border border-neutral-700"
-              >
-                Enviar Email
-              </a>
-              
-              <a 
-                href="https://wa.me/5511999999999"
+            <div className="flex justify-center mt-6">
+              <a
+                href="https://wa.me/5512997796835?text=Ol%C3%A1%20Gabriel,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre..."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 text-center py-3 px-4 rounded-lg transition-colors duration-200 border border-neutral-700"
+                className="inline-flex items-center gap-2 bg-green-500/10 text-green-600 dark:text-green-500 border border-green-500/20 px-8 py-4 rounded-full font-medium hover:bg-green-500/20 hover:scale-105 transition-all duration-300"
               >
-                WhatsApp
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
+                Chamar no WhatsApp
               </a>
             </div>
           </div>

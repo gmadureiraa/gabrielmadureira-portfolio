@@ -5,6 +5,7 @@ import { BentoGrid } from "@/components/magicui/bento-grid";
 import { FadeIn } from "@/components/magicui/fade-in";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
 type ItemType = "Projeto" | "Artigo";
@@ -21,151 +22,179 @@ interface ContentItem {
   image: string;
   type: ItemType;
   date?: string;
+  externalUrl?: string;
 }
 
 const projects: ContentItem[] = [
   {
-    id: 1,
+    id: 7,
     title: "Kaleidos Digital",
-    description: "Agência de marketing digital especializada em cripto e web3. R$602k faturados em 2025. Clientes como Crypto.com, Mercado Bitcoin e Ledger. Em transição para consultoria boutique de alto ticket em 2026.",
-    technologies: ["Marketing Digital", "IA e Automação", "Copywriting", "Growth Hacking", "Analytics"],
-    area: ["Marketing", "IA e Automações", "Crypto"],
+    description: "Minha agência de marketing digital para cripto e fintech. Clientes incluem projetos de crypto, DeFi e fintech. O negócio que sustenta tudo.",
+    technologies: ["Marketing", "IA", "Growth", "Copywriting"],
+    area: ["Marketing", "Crypto"],
     status: "Ativo",
     slug: "kaleidos-digital",
     image: "/images/thumbnail.png",
     type: "Projeto",
+    date: "2024-01-01",
+    externalUrl: "https://kaleidos.com.br",
   },
   {
-    id: 2,
-    title: "KAI APP",
-    description: "Plataforma SaaS de gestão de marketing com IA. Backend em Supabase, frontend em Next.js. Sistema de planejamento, biblioteca de conteúdo, automações e métricas por cliente.",
-    technologies: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "IA", "Python"],
-    area: ["Programação e Dev", "IA e Automações", "Marketing"],
+    id: 6,
+    title: "KAI Kreator",
+    description: "Criadores de conteúdo perdem horas organizando posts em planilhas. KAI automatiza o pipeline inteiro: da ideia à publicação, com IA que sugere horários, formatos e copy.",
+    technologies: ["React", "TypeScript", "Supabase", "IA"],
+    area: ["Programacao e Dev", "IA e Automacoes"],
     status: "Em desenvolvimento",
-    slug: "kaleidos-digital",
-    image: "/images/thumbnail.png",
+    slug: "kai-kreator",
+    image: "/images/projects/kai-kreator.png",
     type: "Projeto",
-  },
-  {
-    id: 3,
-    title: "GOS — Gabriel Operating System",
-    description: "Sistema operacional pessoal: vault Obsidian + Claude Code + agentes AGNO. Gerencia clientes, projetos, conteúdo e automações. O próprio site que você está visitando é um produto do GOS.",
-    technologies: ["Obsidian", "Claude Code", "Python", "AGNO", "TypeScript", "MCP Servers"],
-    area: ["IA e Automações", "Programação e Dev"],
-    status: "Ativo",
-    slug: "automacoes-marketing-n8n",
-    image: "/images/thumbnail.png",
-    type: "Projeto",
+    date: "2026-03-17",
   },
   {
     id: 4,
+    title: "DeFi Radar",
+    description: "Investidores cripto precisam de dados em tempo real para tomar decisões rápidas. DeFi Radar consolida preços, gas, movimentação de baleias e alertas em 16 páginas — tudo em um dashboard único.",
+    technologies: ["React", "Three.js", "CoinGecko", "Recharts"],
+    area: ["Programacao e Dev", "Crypto"],
+    status: "Ativo",
+    slug: "defi-radar",
+    image: "/images/projects/defi-radar.png",
+    type: "Projeto",
+    date: "2026-03-25",
+    externalUrl: "https://radar-blond-zeta.vercel.app",
+  },
+  {
+    id: 3,
+    title: "Kaleidos Pay",
+    description: "Agências perdem tempo cobrando manualmente. Kaleidos Pay unifica PIX, cartão e cripto em um dashboard — cobranças recorrentes, gráficos de receita, zero planilha.",
+    technologies: ["Next.js", "Supabase", "Asaas API", "MetaMask", "Recharts"],
+    area: ["Programacao e Dev", "Crypto"],
+    status: "Ativo",
+    slug: "kaleidos-pay",
+    image: "/images/projects/kaleidos-pay.png",
+    type: "Projeto",
+    date: "2026-03-28",
+    externalUrl: "https://pay.kaleidos.com.br",
+  },
+  {
+    id: 1,
+    title: "Stable Vault",
+    description: "Onde colocar stablecoins para render com segurança? Stable Vault compara rendimentos reais de dezenas de protocolos via DeFiLlama e sugere a estratégia ideal para seu perfil de risco.",
+    technologies: ["Next.js", "TypeScript", "Recharts", "DeFiLlama API"],
+    area: ["Programacao e Dev", "Crypto"],
+    status: "Ativo",
+    slug: "stable-vault",
+    image: "/images/projects/stable-vault.png",
+    type: "Projeto",
+    date: "2026-04-05",
+    externalUrl: "https://stable-vault.vercel.app",
+  },
+  {
+    id: 9,
     title: "Jornal Cripto",
-    description: "Portal de análise e educação financeira em cripto. 10k visitas/mês no pico, 16+ meses de operação. Pivotou de notícias para análise profunda. Foco atual: 1.000 subscribers de email.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "SEO", "Email Marketing"],
-    area: ["Crypto", "Marketing", "Programação e Dev"],
+    description: "Portal de análise cripto que atingiu 10k visitas/mês organicamente. Newsletter 2x/semana com insights em tempo real. O projeto que me colocou no mapa do mercado cripto.",
+    technologies: ["Next.js", "SEO", "Email Marketing", "n8n"],
+    area: ["Crypto", "Marketing"],
     status: "Ativo",
     slug: "jornal-cripto",
     image: "/images/thumbnail.png",
     type: "Projeto",
+    date: "2023-10-01",
   },
   {
-    id: 5,
-    title: "Defiverso",
-    description: "Comunidade e plataforma de educação em DeFi. Conteúdo, estratégias e análise para o mercado de finanças descentralizadas.",
-    technologies: ["DeFi", "Copywriting", "Marketing Digital", "Content Strategy", "Social Media"],
-    area: ["Crypto", "Marketing"],
+    id: 2,
+    title: "Folio — Wallet Tracker",
+    description: "Gerenciar carteiras em 16 blockchains diferentes é caótico. Folio escaneia tudo, consolida preços reais, gráficos históricos, PnL e NFTs em um tracker com Smart Allocator por IA.",
+    technologies: ["React", "TypeScript", "CoinGecko", "DeFiLlama", "Recharts"],
+    area: ["Programacao e Dev", "Crypto"],
     status: "Ativo",
-    slug: "defiverso",
-    image: "/images/thumbnail.png",
+    slug: "wallet-tracker",
+    image: "/images/projects/wallet-tracker.png",
     type: "Projeto",
+    date: "2026-04-01",
+    externalUrl: "https://wallet-tracker-orcin.vercel.app",
   },
   {
-    id: 6,
-    title: "Not Crypto Wallet Tracker",
-    description: "Ferramenta de rastreamento de carteiras cripto. Integração com múltiplas chains, análise de portfólio e alertas de movimentação.",
-    technologies: ["Blockchain", "React", "TypeScript", "API Integration", "Analytics"],
-    area: ["Programação e Dev", "Crypto"],
+    id: 13,
+    title: "Viral Hunter",
+    description: "Encontrar tendências no YouTube antes da concorrência. Viral Hunter descobre vídeos virais por nicho, analisa thumbnails, sugere temas e monitora o que seus competidores estão fazendo.",
+    technologies: ["React", "Supabase", "YouTube API", "Recharts"],
+    area: ["Programacao e Dev", "Marketing"],
     status: "Ativo",
-    slug: "not-crypto-wallet-tracker",
-    image: "/images/thumbnail.png",
+    slug: "viral-hunter",
+    image: "/images/projects/viral-hunter.png",
     type: "Projeto",
-  },
-  {
-    id: 7,
-    title: "Automações com Claude Code e AGNO",
-    description: "Sistema multi-agente especializado: 13 agentes (dev, copy, strategy, marketing, research, seo...) + times orquestrados. Elimina trabalho operacional repetitivo da agência.",
-    technologies: ["Python", "AGNO", "Claude API", "MCP", "Automação", "Multi-agent"],
-    area: ["IA e Automações", "Programação e Dev"],
-    status: "Ativo",
-    slug: "automacoes-marketing-n8n",
-    image: "/images/thumbnail.png",
-    type: "Projeto",
-  },
-  {
-    id: 101,
-    title: "Context Engineering: como gerencio 5 clientes com 1 pessoa e IA",
-    description: "Não é sobre o prompt. É sobre o contexto que você dá para a IA antes do prompt. Como estruturo o trabalho da Kaleidos com context engineering.",
-    technologies: ["Context Engineering", "Claude", "Produtividade", "IA"],
-    area: ["IA e Automações", "Marketing"],
-    status: "Publicado",
-    slug: "context-engineering-gestao-5-clientes",
-    image: "/images/thumbnail.png",
-    type: "Artigo",
-    date: "2026-03-10",
-  },
-  {
-    id: 102,
-    title: "5 Skills do Claude que me economizam 16 horas por semana",
-    description: "Não uso o Claude como chatbot — uso como sistema de agentes. Aqui estão as 5 skills que mais eliminaram trabalho repetitivo da minha semana.",
-    technologies: ["Claude Code", "Skills", "Automação", "Produtividade"],
-    area: ["IA e Automações"],
-    status: "Publicado",
-    slug: "5-skills-claude-que-usam-menos-tempo",
-    image: "/images/thumbnail.png",
-    type: "Artigo",
-    date: "2026-03-05",
-  },
-  {
-    id: 103,
-    title: "Meta vai automatizar 100% dos anúncios. O que isso muda?",
-    description: "Zuckerberg quer automatizar completamente a criação de anúncios. Não é sobre substituir pessoas — é sobre o que muda na sua estratégia.",
-    technologies: ["Meta Ads", "Automação", "Marketing Digital", "IA"],
-    area: ["Marketing", "IA e Automações"],
-    status: "Publicado",
-    slug: "meta-ads-100-automacao-o-que-isso-significa",
-    image: "/images/thumbnail.png",
-    type: "Artigo",
     date: "2026-03-01",
   },
   {
-    id: 104,
-    title: "R$602k de faturamento e uma crise de identidade de agência",
-    description: "2025 foi o melhor ano financeiro da Kaleidos. E o ano em que percebi que o modelo não escala. O que aprendi e para onde vamos em 2026.",
-    technologies: ["Agência", "Negócios", "Escalabilidade", "Estratégia"],
-    area: ["Marketing"],
-    status: "Publicado",
-    slug: "kaleidos-r602k-o-que-aprendi",
-    image: "/images/thumbnail.png",
-    type: "Artigo",
-    date: "2026-02-15",
+    id: 5,
+    title: "Rabito",
+    description: "Manter hábitos é difícil sem feedback visual. Rabito transforma consistência em jogo: streaks, mood tracking, analytics e gamificação que fazem você voltar todo dia.",
+    technologies: ["Next.js", "Zustand", "Recharts", "Framer Motion"],
+    area: ["Programacao e Dev"],
+    status: "Ativo",
+    slug: "rabito",
+    image: "/images/projects/rabito.png",
+    type: "Projeto",
+    date: "2026-04-05",
+    externalUrl: "https://rabito-ashen.vercel.app",
   },
   {
-    id: 105,
-    title: "16 meses, 10k visitas/mês e o fracasso que mais me ensinou",
-    description: "Criei o Jornal Cripto, cheguei a 10k visitas/mês, postei 5x/semana durante meses — e quase abandonei tudo. O que aprendi sobre distribuição e posicionamento.",
-    technologies: ["Content Marketing", "SEO", "Distribuição", "Posicionamento"],
-    area: ["Marketing", "Crypto"],
+    id: 8,
+    title: "O Futuro do Trabalho Automático",
+    description: "Um manifesto sobre o que acontece quando IA faz 90% do trabalho operacional. Escalabilidade, criação humana e por que Renda Básica Universal vai ser inevitável.",
+    technologies: ["Ensaio", "IA", "Futuro", "UBI"],
+    area: ["IA e Automações", "Programação e Dev"],
     status: "Publicado",
-    slug: "jornal-cripto-16-meses-fracasso",
-    image: "/images/thumbnail.png",
+    slug: "manifesto-ia",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80",
     type: "Artigo",
-    date: "2026-01-20",
+    date: "2026-04-10",
+  },
+  {
+    id: 10,
+    title: "Defiverso Hub",
+    description: "DeFi é complicado para quem está começando. Defiverso Hub é um portal educacional imersivo com shaders GLSL, comunidade ativa e conteúdo que traduz finanças descentralizadas para linguagem humana.",
+    technologies: ["Next.js", "Three.js", "GLSL", "Tailwind"],
+    area: ["Programacao e Dev", "Crypto"],
+    status: "Ativo",
+    slug: "defiverso",
+    image: "/images/projects/defiverso-hub.png",
+    type: "Projeto",
+    date: "2025-11-01",
+    externalUrl: "https://defiverso-hub.vercel.app",
+  },
+  {
+    id: 11,
+    title: "DePay",
+    description: "Receber pagamentos em cripto deveria ser tão simples quanto PIX. DePay é um gateway global que aceita USDT, Bitcoin e PIX de qualquer lugar do mundo, com landing interativa e globe 3D.",
+    technologies: ["React", "COBE", "Tailwind", "Vite"],
+    area: ["Programacao e Dev", "Crypto"],
+    status: "Ativo",
+    slug: "depay",
+    image: "/images/projects/depay.png",
+    type: "Projeto",
+    date: "2025-12-15",
+    externalUrl: "https://depay-rho.vercel.app",
+  },
+  {
+    id: 12,
+    title: "Mentoria Defiverso",
+    description: "Plataforma completa para mentorias: dashboard do aluno, QR codes de acesso, acompanhamento de progresso e comunicação integrada. Construído para escalar o atendimento 1:1.",
+    technologies: ["React", "Supabase", "QR Code", "React Query"],
+    area: ["Programacao e Dev"],
+    status: "Ativo",
+    slug: "mentoria",
+    image: "/images/projects/mentoria.png",
+    type: "Projeto",
+    date: "2026-02-01",
   },
 ];
 
 const TYPE_COLORS: Record<ItemType, string> = {
-  Projeto: "bg-blue-500/10 text-blue-400 border-blue-500/20",
-  Artigo: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+  Projeto: "bg-green-500/10 text-green-400 border-green-500/20",
+  Artigo: "bg-purple-500/10 text-purple-400 border-purple-500/20",
 };
 
 function GridIcon() {
@@ -217,7 +246,13 @@ function ProjectsContent() {
   const areas = ["Marketing", "IA e Automações", "Crypto", "Programação e Dev"];
 
   const getItemHref = (item: ContentItem) =>
-    item.type === "Artigo" ? `/posts/${item.slug}` : `/projects/${item.slug}`;
+    item.externalUrl ? item.externalUrl : `/projects/${item.slug}`;
+
+  const getItemTarget = (item: ContentItem) =>
+    item.externalUrl ? "_blank" : undefined;
+
+  const getItemRel = (item: ContentItem) =>
+    item.externalUrl ? "noopener noreferrer" : undefined;
 
   const getFirstArea = (item: ContentItem) =>
     Array.isArray(item.area) ? item.area[0] : item.area;
@@ -225,14 +260,28 @@ function ProjectsContent() {
   // ── Grid card ──────────────────────────────────────────────────
   const GridCard = ({ item }: { item: ContentItem }) => (
     <div className={cn(
-      "group relative overflow-hidden rounded-xl border bg-background p-6 hover:shadow-xl transition-all duration-300",
+      "group flex flex-col overflow-hidden rounded-xl border bg-background hover:shadow-xl transition-all duration-300",
       "border-neutral-800 hover:border-neutral-700"
     )}>
-      <div className="absolute inset-0 bg-gradient-to-br from-neutral-900/50 to-neutral-800/50" />
-      <div className="relative z-10">
+      {item.image && (
+        <div className="relative w-full aspect-video overflow-hidden border-b border-neutral-800">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      )}
+      <div className="flex flex-col flex-1 p-6 relative z-10">
         <div className="flex items-start justify-between mb-4 gap-2">
           <div className="flex flex-wrap gap-1">
-            <span className={cn("text-xs px-2 py-1 rounded-full font-semibold border", TYPE_COLORS[item.type])}>
+            <span className={cn("text-xs px-2 py-1 rounded-full flex items-center gap-1.5 font-semibold border", TYPE_COLORS[item.type])}>
+              {item.type === "Artigo" ? (
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+              ) : (
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+              )}
               {item.type}
             </span>
             <span className="text-xs text-neutral-500 bg-neutral-800/50 px-2 py-1 rounded-full">
@@ -248,8 +297,8 @@ function ProjectsContent() {
         <h3 className="text-lg font-bold text-neutral-100 mb-3 group-hover:text-neutral-200 transition-colors leading-snug">
           {item.title}
         </h3>
-        <p className="text-neutral-400 text-sm mb-4 line-clamp-3">{item.description}</p>
-        <div className="flex flex-wrap gap-1 mb-4">
+        <p className="text-neutral-400 text-sm mb-4 line-clamp-3 flex-1">{item.description}</p>
+        <div className="flex flex-wrap gap-1 mb-4 mt-auto">
           {item.technologies.slice(0, 3).map((tech) => (
             <span key={tech} className="text-xs bg-neutral-800/50 text-neutral-400 px-2 py-1 rounded border border-neutral-700/50">
               {tech}
@@ -259,10 +308,14 @@ function ProjectsContent() {
             <span className="text-xs text-neutral-600 px-2 py-1">+{item.technologies.length - 3}</span>
           )}
         </div>
-        <a href={getItemHref(item)} className="inline-flex items-center gap-1.5 text-sm text-neutral-400 hover:text-neutral-200 transition-colors font-medium">
-          {item.type === "Artigo" ? "Ler artigo" : "Ver detalhes"}
+        <a href={getItemHref(item)} target={getItemTarget(item)} rel={getItemRel(item)} className="inline-flex items-center gap-1.5 text-sm text-neutral-400 hover:text-neutral-200 transition-colors font-medium mt-2">
+          {item.externalUrl ? "Abrir link" : "Ler artigo"}
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            {item.externalUrl ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            )}
           </svg>
         </a>
       </div>
@@ -273,56 +326,41 @@ function ProjectsContent() {
   const ListRow = ({ item }: { item: ContentItem }) => (
     <a
       href={getItemHref(item)}
+      target={getItemTarget(item)}
+      rel={getItemRel(item)}
       className={cn(
-        "group flex items-start gap-4 px-4 py-4 rounded-xl border transition-all duration-200",
-        "border-neutral-800 hover:border-neutral-700 hover:bg-neutral-900/40 bg-background"
+        "group flex items-center gap-3 px-4 py-3 rounded-lg border transition-all duration-200",
+        "border-neutral-800/60 hover:border-neutral-700 hover:bg-neutral-900/30 bg-transparent"
       )}
     >
-      {/* Type indicator bar */}
       <div className={cn(
-        "shrink-0 w-1 self-stretch rounded-full mt-0.5",
-        item.type === "Artigo" ? "bg-amber-500/40" : "bg-blue-500/40"
+        "shrink-0 w-0.5 self-stretch rounded-full",
+        "bg-green-500/50"
       )} />
 
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 mb-1 flex-wrap">
-          <span className={cn("text-xs px-2 py-0.5 rounded-full font-semibold border", TYPE_COLORS[item.type])}>
-            {item.type}
-          </span>
-          <span className="text-xs text-neutral-600">{getFirstArea(item)}</span>
-          {Array.isArray(item.area) && item.area.length > 1 && (
-            <span className="text-xs text-neutral-700">+{item.area.length - 1}</span>
-          )}
-        </div>
-        <h3 className="text-base font-semibold text-neutral-200 group-hover:text-neutral-100 transition-colors leading-snug mb-1 truncate">
-          {item.title}
-        </h3>
-        <p className="text-sm text-neutral-500 line-clamp-1">{item.description}</p>
-      </div>
+      <h3 className="flex-1 text-sm font-medium text-neutral-300 group-hover:text-neutral-100 transition-colors truncate">
+        {item.title}
+      </h3>
 
-      <div className="shrink-0 flex flex-col items-end gap-2 pt-0.5">
-        <span className="text-xs text-neutral-600">
+      <div className="flex items-center gap-2 shrink-0">
+        <span className={cn("text-xs px-2 py-0.5 rounded-full border", TYPE_COLORS[item.type])}>
+          {item.type}
+        </span>
+        <span className="text-xs text-neutral-600 hidden sm:block">{getFirstArea(item)}</span>
+        <span className="text-xs text-neutral-600 w-20 text-right">
           {item.date
-            ? new Date(item.date).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" })
+            ? new Date(item.date).toLocaleDateString("pt-BR", { month: "short", year: "numeric" })
             : item.status}
         </span>
-        <div className="flex flex-wrap gap-1 justify-end hidden sm:flex">
-          {item.technologies.slice(0, 2).map((tech) => (
-            <span key={tech} className="text-xs bg-neutral-800/50 text-neutral-500 px-2 py-0.5 rounded border border-neutral-800">
-              {tech}
-            </span>
-          ))}
-        </div>
       </div>
 
-      <svg className="shrink-0 w-4 h-4 text-neutral-700 group-hover:text-neutral-400 transition-colors mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="shrink-0 w-3.5 h-3.5 text-neutral-700 group-hover:text-neutral-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
       </svg>
     </a>
   );
 
-  const projectCount = projects.filter((p) => p.type === "Projeto").length;
-  const articleCount = projects.filter((p) => p.type === "Artigo").length;
+  const projectCount = projects.length;
 
   return (
     <div className="w-full flex items-center justify-center max-w-7xl mx-auto">
@@ -341,9 +379,9 @@ function ProjectsContent() {
 
           {/* Header */}
           <FadeIn direction="down" className="text-center mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-100 mb-4">Projetos & Artigos</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-neutral-100 mb-4">15+ produtos. Todos funcionando.</h1>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-              O que construí, o que aprendi e o que penso sobre marketing, IA e negócios.
+              De dashboards DeFi a gateways de pagamento — cada projeto tem demo ao vivo e código real.
             </p>
           </FadeIn>
 
@@ -352,9 +390,9 @@ function ProjectsContent() {
             {/* Type pills */}
             <div className="flex gap-2 flex-wrap">
               {[
-                { label: "Tudo", value: "Todos", count: projects.length },
-                { label: "Projetos", value: "Projeto", count: projectCount },
-                { label: "Artigos", value: "Artigo", count: articleCount },
+                { label: "Tudo", value: "Todos", count: projectCount },
+                { label: "Projetos", value: "Projeto", count: projectCount - 1 },
+                { label: "Artigos", value: "Artigo", count: 1 },
               ].map(({ label, value, count }) => (
                 <button
                   key={value}

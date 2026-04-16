@@ -44,11 +44,14 @@ export const renderCustomIcon = (
   liveLinks: boolean
 ) => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
-  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
+  const fallbackHex = theme === "light" ? "#000000" : "#ffffff";
   const minContrastRatio = theme === "dark" ? 2 : 1.2;
 
+  // Forçar a cor
+  const customIcon = { ...icon, hex: theme === "dark" ? "ffffff" : "000000" };
+
   return renderSimpleIcon({
-    icon,
+    icon: customIcon,
     bgHex,
     fallbackHex,
     minContrastRatio,

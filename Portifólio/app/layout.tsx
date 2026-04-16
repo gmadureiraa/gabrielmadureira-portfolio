@@ -8,26 +8,38 @@ import { Umami } from "@/components/umami";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gabriel Madureira - Portfolio",
-  description: "Portfolio pessoal de Gabriel Madureira - Desenvolvedor Full-Stack e especialista em marketing digital",
+  title: {
+    default: "Gabriel Madureira — Fundador da Kaleidos | Cripto, IA & Marketing",
+    template: "%s | Gabriel Madureira",
+  },
+  description:
+    "Portfolio de Gabriel Madureira. 15+ produtos digitais. Cripto, IA, marketing e automacao.",
+  metadataBase: new URL("https://madureira.me"),
   icons: {
-    icon: [
-      {
-        url: '/favicon.ico',
-        sizes: 'any',
-      },
-      {
-        url: '/favicon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: [
-      {
-        url: '/favicon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    shortcut: '/favicon.ico',
+    icon: [{ url: "/avatar.png", type: "image/png" }],
+    apple: [{ url: "/avatar.png", type: "image/png" }],
+  },
+  openGraph: {
+    title: "Gabriel Madureira — Portfolio",
+    description:
+      "Fundador da Kaleidos. Produtos digitais em cripto, IA e marketing.",
+    type: "website",
+    locale: "pt_BR",
+    url: "https://madureira.me",
+    siteName: "Gabriel Madureira",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Gabriel Madureira — Portfolio de Produtos Digitais" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gabriel Madureira — Portfolio",
+    description:
+      "Fundador da Kaleidos. Produtos digitais em cripto, IA e marketing.",
+    creator: "@madureira_eth",
+    images: ["/avatar.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -39,7 +51,23 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-    
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Gabriel Madureira",
+              "jobTitle": "Fundador da Kaleidos",
+              "url": "https://madureira.me",
+              "sameAs": [
+                "https://github.com/gmadureiraa",
+                "https://linkedin.com/in/gabrielmadureira",
+                "https://x.com/madureira"
+              ]
+            })
+          }}
+        />
       </head>
       <body className={inter.className}>
         <ThemeProvider

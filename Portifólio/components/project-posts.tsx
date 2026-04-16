@@ -6,7 +6,7 @@ import ProjectShowcaseVertical from "@/components/project-showcase-vertical";
 const allItems = [
   {
     name: "Kaleidos Digital",
-    body: "Agência de marketing digital em cripto e web3. R$602k em 2025.",
+    body: "Agência de marketing digital para cripto e fintech.",
     slug: "kaleidos-digital",
     image: "/images/thumbnail.png",
     area: "Marketing",
@@ -38,7 +38,7 @@ const allItems = [
   },
   {
     name: "Context Engineering",
-    body: "Como gerencio 5 clientes com 1 pessoa e IA.",
+    body: "Como gerencio múltiplos projetos com 1 pessoa e IA.",
     slug: "context-engineering-gestao-5-clientes",
     image: "/images/thumbnail.png",
     area: "IA e Automações",
@@ -53,9 +53,9 @@ const allItems = [
     type: "Artigo",
   },
   {
-    name: "R$602k e uma crise de agência",
-    body: "O melhor ano financeiro e o modelo que não escala.",
-    slug: "kaleidos-r602k-o-que-aprendi",
+    name: "Escalar uma agência solo",
+    body: "O que aprendi construindo uma agência de marketing com IA.",
+    slug: "kaleidos-escalar-agencia-solo",
     image: "/images/thumbnail.png",
     area: "Marketing",
     type: "Artigo",

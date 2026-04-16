@@ -1,9 +1,10 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Particles from "@/components/magicui/particles";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import Globe from "@/components/magicui/globe";
+const Globe = dynamic(() => import("@/components/magicui/globe"), { ssr: false });
 
 export default function GlobeAndStars() {
   const { theme } = useTheme();

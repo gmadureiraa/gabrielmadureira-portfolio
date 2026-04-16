@@ -1,10 +1,12 @@
 import { getLocalPostBySlug } from "@/lib/posts";
+import { NextRequest } from "next/server";
 
 export async function GET(
-  request: Request,
-  { params }: { params: { slug: string } }
+  request: NextRequest,
+  { params }: { params: Promise<{ slug: string }> }
 ) {
-  const post = getLocalPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getLocalPostBySlug(slug);
 
   if (!post) {
     return new Response(JSON.stringify({ error: "Post not found" }), {

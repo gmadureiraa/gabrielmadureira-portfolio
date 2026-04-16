@@ -1,10 +1,14 @@
 import { NextRequest } from 'next/server';
 
-const TELEGRAM_BOT_TOKEN = '7677997042:AAGddGqKo41Hk_RCx3nmNMB9aAIkHr_sHd8';
-const TELEGRAM_USER_ID = '1568212499';
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const TELEGRAM_USER_ID = process.env.TELEGRAM_USER_ID || '1568212499';
 
 export async function POST(request: NextRequest) {
   const { contato } = await request.json();
+
+  if (!TELEGRAM_BOT_TOKEN) {
+    return new Response(JSON.stringify({ error: 'Telegram bot token not configured.' }), { status: 500 });
+  }
 
   if (!contato) {
     return new Response(JSON.stringify({ error: 'Preencha o campo de contato.' }), { status: 400 });
